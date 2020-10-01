@@ -1,16 +1,17 @@
 version 2.0
 
-web:
-  image: tomcat:8.5.58-jdk15-openjdk-slim-buster
-  ports:
-    - "80:8080"
-  volumes:
-    - artifact:/var/lib/tomcat8/
+services:
+  web:
+    image: tomcat:8.5.58-jdk15-openjdk-slim-buster
+    ports:
+      - "80:8080"
+    volumes:
+      - artifact:/var/lib/tomcat8/
 
-maven:
-  build: ./maven
-  volumes:
-    - artifact:/artifact
+  maven:
+    build: ./maven
+    volumes:
+      - artifact:/artifact
 
 volumes:
   artifact:
