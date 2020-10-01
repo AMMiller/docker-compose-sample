@@ -6,7 +6,7 @@ services:
     ports:
       - "80:8080"
     volumes:
-      - artifact:/var/lib/tomcat8/
+      - artifact:/usr/local/tomcat/webapps.dist/ROOT
 
   maven:
     build: ./maven
